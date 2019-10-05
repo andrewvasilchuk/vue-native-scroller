@@ -1,0 +1,105 @@
+$v-native-scroller-theme-default-primary-color: #41b883;
+$v-native-scroller-theme-default-secondary-color: #35495e;
+$v-native-scroller-theme-default-btn-size: 48px;
+$v-native-scroller-theme-default-btn-padding: 0;
+$v-native-scroller-theme-default-btn-border-width: 0;
+$v-native-scroller-theme-default-btn-radius: 50%;
+$v-native-scroller-theme-default-svg-size: 24px;
+$v-native-scroller-theme-default-btn-offset: 16px;
+$v-native-scroller-theme-default-svg-fill: #fff;
+
+:root {
+  --v-native-scroller-theme-default-primary-color: #{$v-native-scroller-theme-default-primary-color};
+  --v-native-scroller-theme-default-secondary-color: #{$v-native-scroller-theme-default-secondary-color};
+  --v-native-scroller-theme-default-btn-size: #{$v-native-scroller-theme-default-btn-size};
+  --v-native-scroller-theme-default-btn-padding: #{$v-native-scroller-theme-default-btn-padding};
+  --v-native-scroller-theme-default-btn-border-width: #{$v-native-scroller-theme-default-btn-border-width};
+  --v-native-scroller-theme-default-btn-radius: #{$v-native-scroller-theme-default-btn-radius};
+  --v-native-scroller-theme-default-svg-size: #{$v-native-scroller-theme-default-svg-size};
+  --v-native-scroller-theme-default-btn-offset: #{$v-native-scroller-theme-default-btn-offset};
+  --v-native-scroller-theme-default-svg-fill: #{$v-native-scroller-theme-default-svg-fill};
+}
+
+.v-scroller {
+  position: relative;
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: var(
+      --v-native-scroller-theme-default-btn-size,
+      $v-native-scroller-theme-default-btn-size
+    );
+    height: var(
+      --v-native-scroller-theme-default-btn-size,
+      $v-native-scroller-theme-default-btn-size
+    );
+    padding: var(
+      --v-native-scroller-theme-default-btn-padding,
+      $v-native-scroller-theme-default-btn-padding
+    );
+    border: {
+      width: var(
+        --v-native-scroller-theme-default-btn-border-width,
+        $v-native-scroller-theme-default-btn-border-width
+      );
+      radius: var(
+        --v-native-scroller-theme-default-btn-radius,
+        $v-native-scroller-theme-default-btn-radius
+      );
+    }
+    background-color: var(
+      --v-native-scroller-theme-default-secondary-color,
+      $v-native-scroller-theme-default-secondary-color
+    );
+
+    svg {
+      display: inline-block;
+      width: var(
+        --v-native-scroller-theme-default-svg-size,
+        $v-native-scroller-theme-default-svg-size
+      );
+      height: var(
+        --v-native-scroller-theme-default-svg-size,
+        $v-native-scroller-theme-default-svg-size
+      );
+      vertical-align: middle;
+      fill: var(
+        --v-native-scroller-theme-default-svg-fill,
+        $v-native-scroller-theme-default-svg-fill
+      );
+    }
+
+    &:focus {
+      outline: 0;
+      box-shadow: 0 0 0 3px
+        var(
+          --v-native-scroller-theme-default-secondary-color,
+          $v-native-scroller-theme-default-secondary-color
+        );
+    }
+
+    &:hover {
+      background-color: var(
+        --v-native-scroller-theme-default-primary-color,
+        $v-native-scroller-theme-default-primary-color
+      );
+    }
+
+    &--next {
+      right: var(
+        --v-native-scroller-theme-default-btn-offset,
+        $v-native-scroller-theme-default-btn-offset
+      );
+    }
+
+    &--prev {
+      left: var(
+        --v-native-scroller-theme-default-btn-offset,
+        $v-native-scroller-theme-default-btn-offset
+      );
+    }
+  }
+}
